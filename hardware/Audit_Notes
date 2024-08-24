@@ -1,0 +1,12 @@
+Audit Notes -- this was mainly brought up in regards to discontinued components in the BOM.
+
+1. Confirm filter cut-offs and symmetry.
+2. Why Tantanum where selected? Should be low load. Low F filtering?
+3. Why 1.8 V bias? Would 3.3 V work?
+4. Revisit C13/14 -- They do not match the desired load for the crystal oscillator.
+		CL = 16pF
+		C13 = C14 = 0.1uF
+		CL << ((C13 * C14) / (C13  + C14)) + C_stray ~ 50nF -- This will cause the crystal to oscillate slowly.
+		see: https://onlinedocs.microchip.com/pr/GUID-F626284A-58F0-4C25-A6F3-0EA5054F3E2B-en-US-6/index.html?GUID-A1E15E02-F60E-49F0-8E9E-6493FDB4DCA1
+5. See Op Amp analysis
+6. Assess current connectors -- may be worth moving over to more standard ones.
